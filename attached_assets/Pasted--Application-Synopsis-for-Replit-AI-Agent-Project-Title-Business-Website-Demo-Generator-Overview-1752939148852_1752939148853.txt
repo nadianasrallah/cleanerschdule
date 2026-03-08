@@ -1,0 +1,120 @@
+🔍 Application Synopsis for Replit AI Agent
+Project Title:
+Business Website Demo Generator
+
+Overview:
+This is a full-stack web application that allows business owners who already have a website to create an account and receive a staging preview of a modern, AI-enhanced version of their site — without requiring a call or video chat. The goal is to help convert visitors into paying web design clients by showcasing a personalized demo site automatically.
+
+Target User:
+Business owners who:
+
+Already own a website.
+
+Want to see a better, more modern version of their site.
+
+Are not yet paying but are considering a redesign.
+
+Core MVP Features:
+User Account & Form Submission
+
+Form captures:
+
+Business name
+
+Website URL
+
+Email
+
+Desired "look and feel" (theme)
+
+Business type (e.g., yoga studio, café, lawyer)
+
+Staging Site Generator
+
+Based on selected style (e.g. modern, fun, classic), the app chooses a matching HTML/CSS template.
+
+A unique staging URL is created for each submission (e.g., /demo/:id).
+
+Content shown includes business name and a placeholder layout.
+
+Storage
+
+Stores form submissions and links to generated demo sites using Replit Database or similar.
+
+Advanced Features to Implement:
+✨ AI-Generated Images (OpenAI DALL·E)
+Use OpenAI API to generate a unique hero image for each site using prompts like:
+“modern café exterior, cozy lighting, clean typography”
+
+Display generated image in the hero section of the demo website.
+
+✍️ AI-Generated Copy (Optional GPT-4 Integration)
+Auto-generate homepage copy:
+
+Hero headline
+
+About section
+
+Services/Offerings
+
+Prompts use the user’s selected business type and theme.
+
+🎨 Template Matching Logic
+Map user-selected "look and feel" to a layout:
+
+"modern minimalist" → minimalist.ejs
+
+"fun & colorful" → vibrant.ejs
+
+"vintage" → vintage.ejs
+
+Templates should support injecting AI-generated content and images.
+
+🧾 Purchase & Go Live Flow
+Option to "Go Live" with a domain:
+
+Stripe checkout integration
+
+Optionally automate domain pointing (via Namecheap or GoDaddy API)
+
+Or provide DNS/CNAME instructions on a post-purchase screen
+
+Technical Requirements:
+Frontend: HTML/CSS with EJS templates (or React if desired)
+
+Backend: Node.js with Express
+
+Database: Replit DB (key-value store) or Firebase/PostgreSQL
+
+AI Services: OpenAI GPT (for text), OpenAI DALL·E (for images)
+
+Other Packages: uuid, body-parser, express, ejs, replit-db
+
+Deployment: Replit hosting with .repl.co staging links
+
+User Experience Summary:
+Visitor goes to the homepage and submits their business info + style preferences.
+
+The app:
+
+Generates a demo site layout
+
+Uses OpenAI to generate a hero image and homepage content
+
+Saves the submission
+
+Redirects the user to a unique preview URL
+
+User sees their personalized staging site.
+
+If they like it, they can click "Go Live," pay, and connect their own domain.
+
+🔐 Optional Extras:
+reCAPTCHA or rate limiting
+
+User login to manage multiple demos
+
+A dashboard to edit or tweak their staging site
+
+Analytics on who viewed the demo
+
